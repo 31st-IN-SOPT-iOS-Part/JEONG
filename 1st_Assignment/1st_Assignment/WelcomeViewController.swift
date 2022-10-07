@@ -22,7 +22,7 @@ class WelcomeViewController: UIViewController {
         return label
     }()
     
-    private let checkButton: UIButton = {
+    lazy var checkButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 20, y: 450, width: 350, height: 40))
         button.setTitle("확인", for: .normal)
         button.setTitleColor(.black , for: .normal)
