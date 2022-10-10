@@ -10,62 +10,62 @@ import UIKit
 class KakaoSignUpViewController: UIViewController {
     
     private let startLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: 120, y: 150, width: 250, height: 30))
+        let label = UILabel()
         label.text = "카카오톡을 시작합니다"
         label.font = .boldSystemFont(ofSize: 20)
         return label
     }()
     
     // 이메일 입력 텍스트필드
-    private let idTextField: UITextField = {
-        let textField = UITextField(frame: CGRect(x: 20, y: 280, width: 350, height: 29))
+    private let IDTextField: UITextField = {
+        let textField = UITextField()
         textField.placeholder = "이메일 또는 전화번호"
-        textField.font = .systemFont(ofSize: 15, weight: .medium)
+        textField.font = .systemFont(ofSize: 17, weight: .medium)
         textField.textColor = .systemGray3
         return textField
     }()
     
-    private let idView: UIView = {
-        let view = UIView(frame: CGRect(x: 20, y: 310, width: 350, height: 1))
+    private let IDView: UIView = {
+        let view = UIView()
         view.backgroundColor = .systemGray4
         return view
     }()
     
     // 비밀번호 텍스트필드
     private let pwTextField: UITextField = {
-        let textField = UITextField(frame: CGRect(x: 20, y: 330, width: 350, height: 29))
+        let textField = UITextField()
         textField.placeholder = "비밀번호"
-        textField.font = .systemFont(ofSize: 15, weight: .medium)
+        textField.font = .systemFont(ofSize: 17, weight: .medium)
         textField.textColor = .systemGray3
         textField.isSecureTextEntry = true
         return textField
     }()
     
     private let pwView: UIView = {
-        let view = UIView(frame: CGRect(x: 20, y: 360, width: 350, height: 1))
+        let view = UIView()
         view.backgroundColor = .systemGray4
         return view
     }()
     
     // 비밀번호 확인 텍스트필드
     private let pwcheckTextField: UITextField = {
-        let textField = UITextField(frame: CGRect(x: 20, y: 380, width: 350, height: 29))
+        let textField = UITextField()
         textField.placeholder = "비밀번호 확인"
-        textField.font = .systemFont(ofSize: 15, weight : .medium)
+        textField.font = .systemFont(ofSize: 17, weight : .medium)
         textField.textColor = .systemGray3
         textField.isSecureTextEntry = true
         return textField
     }()
     
     private let pwcheckView: UIView = {
-        let view = UIView(frame: CGRect(x: 20, y: 410, width: 350, height: 1))
+        let view = UIView()
         view.backgroundColor = .systemGray4
         return view
     }()
     
     // 계정 만들기 버튼
     private let newIDButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: 20, y: 450, width: 350, height: 40))
+        let button = UIButton()
         button.setTitle("새로운 카카오계정 만들기", for: .normal)
         button.setTitleColor(.black , for: .normal)
         button.backgroundColor = .systemGray6
@@ -78,10 +78,64 @@ class KakaoSignUpViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        let components: [Any] = [startLabel, idTextField, idView, pwTextField, pwView, pwcheckTextField, pwcheckView, newIDButton]
+        view.addSubview(startLabel)
+        view.addSubview(IDTextField)
+        view.addSubview(IDView)
+        view.addSubview(pwTextField)
+        view.addSubview(pwView)
+        view.addSubview(pwcheckTextField)
+        view.addSubview(pwcheckView)
+        view.addSubview(newIDButton)
         
-        components.forEach{
-            view.addSubview($0 as! UIView)
+        startLabel.snp.makeConstraints { make in
+            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(40)
+            make.leading.trailing.equalTo(self.view.safeAreaLayoutGuide).inset(95)
+            make.width.equalTo(197)
+        }
+        
+        IDTextField.snp.makeConstraints { make in
+            make.top.equalTo(self.startLabel).offset(129)
+            make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(21)
+            make.width.equalTo(333)
+        }
+        
+        IDView.snp.makeConstraints { make in
+            make.top.equalTo(self.IDTextField.snp.bottom).offset(13)
+            make.leading.equalTo(self.IDTextField)
+            make.width.equalTo(333)
+            make.height.equalTo(1)
+        }
+        
+        pwTextField.snp.makeConstraints { make in
+            make.top.equalTo(self.IDView.snp.bottom).offset(23)
+            make.leading.trailing.equalTo(self.IDTextField)
+            make.width.equalTo(self.IDTextField)
+        }
+        
+        pwView.snp.makeConstraints { make in
+            make.top.equalTo(self.pwTextField.snp.bottom).offset(13)
+            make.leading.equalTo(self.pwTextField)
+            make.width.equalTo(333)
+            make.height.equalTo(1)
+        }
+        
+        pwcheckTextField.snp.makeConstraints { make in
+            make.top.equalTo(self.pwView.snp.bottom).offset(23)
+            make.leading.trailing.equalTo(self.IDTextField)
+            make.width.equalTo(self.IDTextField)
+        }
+        
+        pwcheckView.snp.makeConstraints { make in
+            make.top.equalTo(self.pwcheckTextField.snp.bottom).offset(13)
+            make.leading.equalTo(self.pwcheckTextField)
+            make.width.equalTo(333)
+            make.height.equalTo(1)
+        }
+        
+        newIDButton.snp.makeConstraints { make in
+            make.top.equalTo(self.pwcheckView.snp.bottom).offset(35)
+            make.leading.trailing.equalTo(self.view.safeAreaLayoutGuide).inset(21)
+            make.height.equalTo(44)
         }
     }
     
@@ -91,7 +145,7 @@ class KakaoSignUpViewController: UIViewController {
         welcomeVC.modalPresentationStyle = .formSheet
         self.present(welcomeVC, animated: true, completion: nil)
         
-        welcomeVC.result = idTextField.text
+        welcomeVC.result = IDTextField.text
         welcomeVC.dataBind()
     }
     

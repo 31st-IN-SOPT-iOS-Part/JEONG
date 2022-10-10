@@ -23,6 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navigationControler = UINavigationController(rootViewController: rootVC)
         
         window?.rootViewController = navigationControler
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
