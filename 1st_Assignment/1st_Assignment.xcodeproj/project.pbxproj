@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		034CF93A28F00AD70092ACB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CF93928F00AD70092ACB8 /* AppDelegate.swift */; };
 		034CF93C28F00AD70092ACB8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CF93B28F00AD70092ACB8 /* SceneDelegate.swift */; };
-		034CF93E28F00AD70092ACB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CF93D28F00AD70092ACB8 /* ViewController.swift */; };
+		034CF93E28F00AD70092ACB8 /* KakaoStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CF93D28F00AD70092ACB8 /* KakaoStartViewController.swift */; };
 		034CF94128F00AD70092ACB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034CF93F28F00AD70092ACB8 /* Main.storyboard */; };
 		034CF94328F00AD80092ACB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 034CF94228F00AD80092ACB8 /* Assets.xcassets */; };
 		034CF94628F00AD80092ACB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034CF94428F00AD80092ACB8 /* LaunchScreen.storyboard */; };
-		034CF94E28F00C790092ACB8 /* CreateIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CF94D28F00C790092ACB8 /* CreateIdViewController.swift */; };
+		034CF94E28F00C790092ACB8 /* KakaoSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CF94D28F00C790092ACB8 /* KakaoSignupViewController.swift */; };
 		034CF95028F00D0E0092ACB8 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CF94F28F00D0E0092ACB8 /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -21,12 +21,12 @@
 		034CF93628F00AD70092ACB8 /* 1st_Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 1st_Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		034CF93928F00AD70092ACB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		034CF93B28F00AD70092ACB8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		034CF93D28F00AD70092ACB8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		034CF93D28F00AD70092ACB8 /* KakaoStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoStartViewController.swift; sourceTree = "<group>"; };
 		034CF94028F00AD70092ACB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		034CF94228F00AD80092ACB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		034CF94528F00AD80092ACB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		034CF94728F00AD80092ACB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		034CF94D28F00C790092ACB8 /* CreateIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIdViewController.swift; sourceTree = "<group>"; };
+		034CF94D28F00C790092ACB8 /* KakaoSignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoSignupViewController.swift; sourceTree = "<group>"; };
 		034CF94F28F00D0E0092ACB8 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,12 +62,12 @@
 			children = (
 				034CF93928F00AD70092ACB8 /* AppDelegate.swift */,
 				034CF93B28F00AD70092ACB8 /* SceneDelegate.swift */,
-				034CF93D28F00AD70092ACB8 /* ViewController.swift */,
+				034CF93D28F00AD70092ACB8 /* KakaoStartViewController.swift */,
 				034CF93F28F00AD70092ACB8 /* Main.storyboard */,
 				034CF94228F00AD80092ACB8 /* Assets.xcassets */,
 				034CF94428F00AD80092ACB8 /* LaunchScreen.storyboard */,
 				034CF94728F00AD80092ACB8 /* Info.plist */,
-				034CF94D28F00C790092ACB8 /* CreateIdViewController.swift */,
+				034CF94D28F00C790092ACB8 /* KakaoSignupViewController.swift */,
 				034CF94F28F00D0E0092ACB8 /* WelcomeViewController.swift */,
 			);
 			path = 1st_Assignment;
@@ -144,11 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				034CF93E28F00AD70092ACB8 /* ViewController.swift in Sources */,
+				034CF93E28F00AD70092ACB8 /* KakaoStartViewController.swift in Sources */,
 				034CF95028F00D0E0092ACB8 /* WelcomeViewController.swift in Sources */,
 				034CF93A28F00AD70092ACB8 /* AppDelegate.swift in Sources */,
 				034CF93C28F00AD70092ACB8 /* SceneDelegate.swift in Sources */,
-				034CF94E28F00C790092ACB8 /* CreateIdViewController.swift in Sources */,
+				034CF94E28F00C790092ACB8 /* KakaoSignupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
