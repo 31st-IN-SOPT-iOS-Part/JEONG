@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0335870A28F44BBC000F70FD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0335870928F44BBC000F70FD /* SnapKit */; };
+		0335870C28F4E69E000F70FD /* FriendTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0335870B28F4E69E000F70FD /* FriendTabViewController.swift */; };
+		0335870E28F4F5D0000F70FD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0335870D28F4F5D0000F70FD /* ProfileViewController.swift */; };
 		034CF93A28F00AD70092ACB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CF93928F00AD70092ACB8 /* AppDelegate.swift */; };
 		034CF93C28F00AD70092ACB8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CF93B28F00AD70092ACB8 /* SceneDelegate.swift */; };
 		034CF93E28F00AD70092ACB8 /* KakaoStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CF93D28F00AD70092ACB8 /* KakaoStartViewController.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0335870B28F4E69E000F70FD /* FriendTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTabViewController.swift; sourceTree = "<group>"; };
+		0335870D28F4F5D0000F70FD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		034CF93628F00AD70092ACB8 /* Assignment_Kakao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment_Kakao.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		034CF93928F00AD70092ACB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		034CF93B28F00AD70092ACB8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +75,8 @@
 				034CF94728F00AD80092ACB8 /* Info.plist */,
 				034CF94D28F00C790092ACB8 /* KakaoSignUpViewController.swift */,
 				034CF94F28F00D0E0092ACB8 /* WelcomeViewController.swift */,
+				0335870B28F4E69E000F70FD /* FriendTabViewController.swift */,
+				0335870D28F4F5D0000F70FD /* ProfileViewController.swift */,
 			);
 			name = 1st_Assignment;
 			path = Assignment_Kakao;
@@ -155,7 +161,9 @@
 			files = (
 				034CF93E28F00AD70092ACB8 /* KakaoStartViewController.swift in Sources */,
 				034CF95028F00D0E0092ACB8 /* WelcomeViewController.swift in Sources */,
+				0335870C28F4E69E000F70FD /* FriendTabViewController.swift in Sources */,
 				034CF93A28F00AD70092ACB8 /* AppDelegate.swift in Sources */,
+				0335870E28F4F5D0000F70FD /* ProfileViewController.swift in Sources */,
 				034CF93C28F00AD70092ACB8 /* SceneDelegate.swift in Sources */,
 				034CF94E28F00C790092ACB8 /* KakaoSignUpViewController.swift in Sources */,
 			);
