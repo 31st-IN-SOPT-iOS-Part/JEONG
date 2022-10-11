@@ -13,6 +13,7 @@ class ProfileViewController: UIViewController {
     lazy var profileCloseButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "profile_closeBtn"), for: .normal)
+        button.addTarget(self, action: #selector(friendTabBackButton), for: .touchUpInside)
         return button
     }()
     
@@ -132,13 +133,11 @@ class ProfileViewController: UIViewController {
             make.leading.equalTo(editBtn.snp.trailing).inset(0)
             make.width.equalTo(96)
             make.height.equalTo(72)
-            
         }
-        
     }
     
-    
-
-
-
+    @objc
+    private func friendTabBackButton(){
+        self.dismiss(animated: true)
+    }
 }

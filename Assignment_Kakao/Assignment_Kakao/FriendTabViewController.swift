@@ -27,6 +27,7 @@ class FriendTabViewController: UIViewController {
     private let profileImgButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "friendtab_profileImg"), for: .normal)
+        button.addTarget(self, action: #selector(presentToProfileVC), for: .touchUpInside)
         return button
     }()
 
@@ -68,4 +69,11 @@ class FriendTabViewController: UIViewController {
         }
     }
     
+    // 프로필 연결
+    @objc
+    private func presentToProfileVC(){
+        let profileVC = ProfileViewController()
+        profileVC.modalPresentationStyle = .fullScreen
+        self.present(profileVC, animated: true)
+    }
 }
