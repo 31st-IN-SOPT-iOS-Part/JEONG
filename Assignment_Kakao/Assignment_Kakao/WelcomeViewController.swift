@@ -39,7 +39,7 @@ class WelcomeViewController: UIViewController {
         
         nameLabel.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide).offset(241)
-            make.leading.trailing.equalTo(self.view.safeAreaLayoutGuide).inset(144)
+            make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(144)
             make.height.equalTo(60)
         }
         
@@ -57,11 +57,18 @@ class WelcomeViewController: UIViewController {
     
     @objc
     private func touchupBackButton(){
+        // rootView를 FriendTabViewController로 변경
+        let navigationController = UINavigationController(rootViewController: FriendTabViewController())
+        navigationController.modalPresentationStyle = .overFullScreen
+        self.present(navigationController, animated: true)
+        
+        /*
         if self.navigationController == nil{
             self.dismiss(animated: true, completion: nil)
         }
         else{
             self.navigationController?.popViewController(animated: true)
         }
+         */
     }
 }

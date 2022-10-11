@@ -89,7 +89,7 @@ class KakaoStartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
+
         view.addSubview(startLabel)
         view.addSubview(explainLabel)
         view.addSubview(EmailTextField)
@@ -102,13 +102,12 @@ class KakaoStartViewController: UIViewController {
         
         startLabel.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide).offset(40)
-            make.leading.trailing.equalTo(self.view.safeAreaLayoutGuide).inset(95)
-            make.width.equalTo(197)
+            make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(89)
         }
         
         explainLabel.snp.makeConstraints { make in
             make.top.equalTo(self.startLabel.snp.bottom).offset(20)
-            make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(70)
+            make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(67)
             make.width.equalTo(240)
         }
         
@@ -180,7 +179,7 @@ class KakaoStartViewController: UIViewController {
     @objc
     private func welcomeNextButton(){
         presentToWelcomeVC()
+        
     }
-
 }
 

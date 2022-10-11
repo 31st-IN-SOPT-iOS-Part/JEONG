@@ -19,11 +19,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         
         // 화면 이동
-        let rootVC = ProfileViewController()
-        // let navigationControler = UINavigationController(rootViewController: rootVC)
+        let rootVC = KakaoStartViewController()
+        let navigationControler = UINavigationController(rootViewController: rootVC)
         
-        window?.rootViewController = rootVC
-        
+        window?.rootViewController = navigationControler
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

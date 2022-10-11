@@ -34,6 +34,12 @@ class FriendTabViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
+        /*
+        let startVC = KakaoStartViewController()
+        startVC.modalPresentationStyle = .fullScreen
+        present(startVC, animated: false)
+         */
+        
         view.addSubview(containerView)
         containerView.addSubview(friendLabel)
         containerView.addSubview(settingImg)
@@ -60,8 +66,6 @@ class FriendTabViewController: UIViewController {
             make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(14)
             make.width.height.equalTo(59)
         }
-        
-        
-
     }
+    
 }
