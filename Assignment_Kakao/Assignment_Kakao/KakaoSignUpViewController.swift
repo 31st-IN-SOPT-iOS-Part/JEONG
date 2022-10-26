@@ -78,14 +78,10 @@ class KakaoSignUpViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        view.addSubview(startLabel)
-        view.addSubview(IDTextField)
-        view.addSubview(IDView)
-        view.addSubview(pwTextField)
-        view.addSubview(pwView)
-        view.addSubview(pwcheckTextField)
-        view.addSubview(pwcheckView)
-        view.addSubview(newIDButton)
+        // forEach 사용
+        [startLabel, IDTextField, IDView, pwTextField, pwView, pwcheckTextField, pwcheckView, newIDButton].forEach{
+            view.addSubview($0)
+        }
         
         startLabel.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide).offset(40)

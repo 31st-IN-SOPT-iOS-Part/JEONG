@@ -89,16 +89,42 @@ class KakaoStartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        layout()
+    }
+    
+    // 로그인 화면 이동
+    private func presentToWelcomeVC(){
+        let welcomeVC = WelcomeViewController()
+        self.present(welcomeVC, animated: true, completion: nil)
+        
+        welcomeVC.result = EmailTextField.text
+        welcomeVC.dataBind()
+    }
+    
+    // 계정 생성 화면 이동
+    private func pushToCreateidVC(){
+        let secondVC = KakaoSignUpViewController()
+        self.navigationController?.pushViewController(secondVC, animated: true)
+    }
+    
+    @objc
+    private func createNextButton(){
+        pushToCreateidVC()
+    }
+    
+    @objc
+    private func welcomeNextButton(){
+        presentToWelcomeVC()
+        
+    }
+}
 
-        view.addSubview(startLabel)
-        view.addSubview(explainLabel)
-        view.addSubview(EmailTextField)
-        view.addSubview(IDView)
-        view.addSubview(pwTextField)
-        view.addSubview(pwView)
-        view.addSubview(loginButton)
-        view.addSubview(newIDButton)
-        view.addSubview(findID)
+// 함수로 묶어서 정리
+extension KakaoStartViewController {
+    func layout(){
+        
+        // addSubviews 함수 사용
+        view.addSubviews([startLabel, explainLabel, EmailTextField, IDView, pwTextField, pwView, loginButton, newIDButton, findID])
         
         startLabel.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide).offset(40)
@@ -154,32 +180,4 @@ class KakaoStartViewController: UIViewController {
             make.leading.trailing.equalTo(110)
         }
     }
-    
-    // 로그인 화면 이동
-    private func presentToWelcomeVC(){
-        let welcomeVC = WelcomeViewController()
-        self.present(welcomeVC, animated: true, completion: nil)
-        
-        welcomeVC.result = EmailTextField.text
-        welcomeVC.dataBind()
-    }
-    
-    // 계정 생성 화면 이동
-    private func pushToCreateidVC(){
-        let secondVC = KakaoSignUpViewController()
-        
-        self.navigationController?.pushViewController(secondVC, animated: true)
-    }
-    
-    @objc
-    private func createNextButton(){
-        pushToCreateidVC()
-    }
-    
-    @objc
-    private func welcomeNextButton(){
-        presentToWelcomeVC()
-        
-    }
 }
-

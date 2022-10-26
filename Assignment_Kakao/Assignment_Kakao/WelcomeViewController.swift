@@ -14,7 +14,7 @@ class WelcomeViewController: UIViewController {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 20)
         label.textAlignment = .center
-        label.numberOfLines = 2 // 줄 수 2개
+        label.numberOfLines = 0
         return label
     }()
     
@@ -24,7 +24,7 @@ class WelcomeViewController: UIViewController {
         button.setTitleColor(.black , for: .normal)
         button.backgroundColor = .systemYellow
         button.layer.cornerRadius = 5 // 버튼 모서리 둥글게
-        button.addTarget(self, action: #selector(touchupBackButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(moveToFriendTabVC), for: .touchUpInside)
         return button
     }()
     
@@ -56,19 +56,17 @@ class WelcomeViewController: UIViewController {
     }
     
     @objc
-    private func touchupBackButton(){
+    private func moveToFriendTabVC(){
         // rootView를 FriendTabViewController로 변경
+        /*
         let navigationController = UINavigationController(rootViewController: FriendTabViewController())
         navigationController.modalPresentationStyle = .overFullScreen
         self.present(navigationController, animated: true)
-        
-        /*
-        if self.navigationController == nil{
-            self.dismiss(animated: true, completion: nil)
-        }
-        else{
-            self.navigationController?.popViewController(animated: true)
-        }
          */
+        let mainViewController = FriendTabViewController()
+        let navigationController = UINavigationController(rootViewController: mainViewController)
+        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
+        sceneDelegate.window?.rootViewController = navigationController
+        self.present(navigationController, animated: true)
     }
 }

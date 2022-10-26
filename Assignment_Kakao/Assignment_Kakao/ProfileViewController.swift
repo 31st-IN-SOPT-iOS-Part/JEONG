@@ -82,13 +82,8 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.init(displayP3Red: 135/255, green: 145/255, blue: 152/255, alpha: 1)
         
-        view.addSubview(profileCloseButton)
-        view.addSubview(profileImg)
-        view.addSubview(profileNameLabel)
-        view.addSubview(profileLine)
-        view.addSubview(selfTalkBtn)
-        view.addSubview(editBtn)
-        view.addSubview(storyBtn)
+        // addSubviews 함수 사용
+        view.addSubviews([profileCloseButton, profileImg, profileNameLabel, profileLine, selfTalkBtn, editBtn, storyBtn])
         
         profileCloseButton.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide).offset(14)
@@ -139,5 +134,14 @@ class ProfileViewController: UIViewController {
     @objc
     private func friendTabBackButton(){
         self.dismiss(animated: true)
+    }
+}
+
+// addSubviews
+extension UIView {
+    func addSubviews(_ views: [UIView]){
+        for view in views{
+            self.addSubview(view)
+        }
     }
 }
