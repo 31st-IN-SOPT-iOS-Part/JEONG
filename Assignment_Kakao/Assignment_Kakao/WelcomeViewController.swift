@@ -33,9 +33,26 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
-        view.addSubview(nameLabel)
-        view.addSubview(checkButton)
+        layout()
+    }
+    
+    func dataBind(){
+        guard let result = self.result else { return }
+        nameLabel.text = "\(result)님 \n 환영합니다"
+    }
+    
+    @objc
+    private func moveToFriendTabVC(){ // 뷰 전환
+        let mainViewController = FriendTabViewController()
+        let navigationController = UINavigationController(rootViewController: mainViewController)
+        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
+        sceneDelegate.window?.rootViewController = navigationController
+    }
+}
+
+extension WelcomeViewController{
+    private func layout(){
+        view.addSubviews([nameLabel, checkButton])
         
         nameLabel.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide).offset(241)
@@ -48,25 +65,5 @@ class WelcomeViewController: UIViewController {
             make.leading.trailing.equalTo(self.view.safeAreaLayoutGuide).inset(21)
             make.height.equalTo(44)
         }
-    }
-    
-    func dataBind(){
-        guard let result = self.result else { return }
-        nameLabel.text = "\(result)님 \n 환영합니다"
-    }
-    
-    @objc
-    private func moveToFriendTabVC(){
-        // rootView를 FriendTabViewController로 변경
-        /*
-        let navigationController = UINavigationController(rootViewController: FriendTabViewController())
-        navigationController.modalPresentationStyle = .overFullScreen
-        self.present(navigationController, animated: true)
-         */
-        let mainViewController = FriendTabViewController()
-        let navigationController = UINavigationController(rootViewController: mainViewController)
-        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
-        sceneDelegate.window?.rootViewController = navigationController
-        self.present(navigationController, animated: true)
     }
 }

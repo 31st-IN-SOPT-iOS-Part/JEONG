@@ -34,12 +34,23 @@ class FriendTabViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
+        layout()
+    }
+    
+    // 프로필 연결
+    @objc
+    private func presentToProfileVC(){
+        let profileVC = ProfileViewController()
+        profileVC.modalPresentationStyle = .fullScreen
+        self.present(profileVC, animated: true)
+    }
+}
+
+extension FriendTabViewController{
+    private func layout(){
         view.addSubview(containerView)
-        containerView.addSubview(friendLabel)
-        containerView.addSubview(settingImg)
-        containerView.addSubview(profileImgButton)
-        
+        containerView.addSubviews([friendLabel, settingImg, profileImgButton])
+
         containerView.snp.makeConstraints { make in
             make.edges.equalTo(self.view.safeAreaLayoutGuide)
         }
@@ -61,13 +72,5 @@ class FriendTabViewController: UIViewController {
             make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(14)
             make.width.height.equalTo(59)
         }
-    }
-    
-    // 프로필 연결
-    @objc
-    private func presentToProfileVC(){
-        let profileVC = ProfileViewController()
-        profileVC.modalPresentationStyle = .fullScreen
-        self.present(profileVC, animated: true)
     }
 }

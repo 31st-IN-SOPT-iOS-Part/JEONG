@@ -81,7 +81,26 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.init(displayP3Red: 135/255, green: 145/255, blue: 152/255, alpha: 1)
-        
+        layout()
+    }
+    
+    @objc
+    private func friendTabBackButton(){
+        self.dismiss(animated: true)
+    }
+}
+
+// addSubviews
+extension UIView {
+    func addSubviews(_ views: [UIView]){
+        for view in views{
+            self.addSubview(view)
+        }
+    }
+}
+
+extension ProfileViewController{
+    private func layout(){
         // addSubviews 함수 사용
         view.addSubviews([profileCloseButton, profileImg, profileNameLabel, profileLine, selfTalkBtn, editBtn, storyBtn])
         
@@ -128,20 +147,6 @@ class ProfileViewController: UIViewController {
             make.leading.equalTo(editBtn.snp.trailing).inset(0)
             make.width.equalTo(96)
             make.height.equalTo(72)
-        }
-    }
-    
-    @objc
-    private func friendTabBackButton(){
-        self.dismiss(animated: true)
-    }
-}
-
-// addSubviews
-extension UIView {
-    func addSubviews(_ views: [UIView]){
-        for view in views{
-            self.addSubview(view)
         }
     }
 }

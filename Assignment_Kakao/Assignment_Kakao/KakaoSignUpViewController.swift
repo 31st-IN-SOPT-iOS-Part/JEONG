@@ -77,7 +77,27 @@ class KakaoSignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        layout()
+    }
+    
+    // 로그인 화면 이동
+    private func presentToWelcomeVC(){
+        let welcomeVC = WelcomeViewController()
+        welcomeVC.modalPresentationStyle = .formSheet
+        self.present(welcomeVC, animated: true, completion: nil)
         
+        welcomeVC.result = IDTextField.text
+        welcomeVC.dataBind()
+    }
+    
+    @objc
+    private func touchupNextButton(){
+        presentToWelcomeVC()
+    }
+}
+
+extension KakaoSignUpViewController{
+    private func layout(){
         // forEach 사용
         [startLabel, IDTextField, IDView, pwTextField, pwView, pwcheckTextField, pwcheckView, newIDButton].forEach{
             view.addSubview($0)
@@ -133,20 +153,5 @@ class KakaoSignUpViewController: UIViewController {
             make.leading.trailing.equalTo(self.view.safeAreaLayoutGuide).inset(21)
             make.height.equalTo(44)
         }
-    }
-    
-    // 로그인 화면 이동
-    private func presentToWelcomeVC(){
-        let welcomeVC = WelcomeViewController()
-        welcomeVC.modalPresentationStyle = .formSheet
-        self.present(welcomeVC, animated: true, completion: nil)
-        
-        welcomeVC.result = IDTextField.text
-        welcomeVC.dataBind()
-    }
-    
-    @objc
-    private func touchupNextButton(){
-        presentToWelcomeVC()
     }
 }
