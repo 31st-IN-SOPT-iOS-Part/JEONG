@@ -6,29 +6,25 @@
 //
 
 import UIKit
+import SnapKit
 
 class WelcomeViewController: UIViewController {
     
     private let nameLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: 175, y: 270, width: 100, height: 30))
+        let label = UILabel()
         label.font = .boldSystemFont(ofSize: 20)
-        return label
-    }()
-
-    private let welcomeLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: 155, y: 310, width: 100, height: 30))
-        label.text = "환영합니다"
-        label.font = .boldSystemFont(ofSize: 20)
+        label.textAlignment = .center
+        label.numberOfLines = 0
         return label
     }()
     
     lazy var checkButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: 20, y: 450, width: 350, height: 40))
+        let button = UIButton()
         button.setTitle("확인", for: .normal)
         button.setTitleColor(.black , for: .normal)
         button.backgroundColor = .systemYellow
         button.layer.cornerRadius = 5 // 버튼 모서리 둥글게
-        button.addTarget(self, action: #selector(touchupBackButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(moveToFriendTabVC), for: .touchUpInside)
         return button
     }()
     
@@ -37,25 +33,37 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-
-        let components: [Any] = [nameLabel, welcomeLabel, checkButton]
-        components.forEach{
-            view.addSubview($0 as! UIView)
-        }
+        layout()
     }
     
     func dataBind(){
         guard let result = self.result else { return }
-        nameLabel.text = "\(result)님"
+        nameLabel.text = "\(result)님 \n 환영합니다"
     }
     
     @objc
-    private func touchupBackButton(){
-        if self.navigationController == nil{
-            self.dismiss(animated: true, completion: nil)
+    private func moveToFriendTabVC(){ // 뷰 전환
+        let mainViewController = FriendTabViewController()
+        let navigationController = UINavigationController(rootViewController: mainViewController)
+        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
+        sceneDelegate.window?.rootViewController = navigationController
+    }
+}
+
+extension WelcomeViewController{
+    private func layout(){
+        view.addSubviews([nameLabel, checkButton])
+        
+        nameLabel.snp.makeConstraints { make in
+            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(241)
+            make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(144)
+            make.height.equalTo(60)
         }
-        else{
-            self.navigationController?.popViewController(animated: true)
+        
+        checkButton.snp.makeConstraints { make in
+            make.top.equalTo(self.nameLabel.snp.bottom).offset(117)
+            make.leading.trailing.equalTo(self.view.safeAreaLayoutGuide).inset(21)
+            make.height.equalTo(44)
         }
     }
 }
