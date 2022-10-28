@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         
         // 화면 이동
-        let rootVC = KakaoStartViewController()
+        let rootVC = KakaoTabbarController()
         let navigationControler = UINavigationController(rootViewController: rootVC)
         
         window?.rootViewController = navigationControler
