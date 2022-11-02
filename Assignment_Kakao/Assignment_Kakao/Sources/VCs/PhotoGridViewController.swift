@@ -1,5 +1,5 @@
 //
-//  PhotoGridViewController.swift
+//  ChatViewController.swift
 //  Assignment_Kakao
 //
 //  Created by KJ on 2022/10/28.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PhotoGridViewController: UIViewController {
+class ChatViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

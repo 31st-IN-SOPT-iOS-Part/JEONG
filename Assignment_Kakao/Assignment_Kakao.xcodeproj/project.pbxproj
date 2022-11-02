@@ -18,7 +18,6 @@
 		034CF94628F00AD80092ACB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034CF94428F00AD80092ACB8 /* LaunchScreen.storyboard */; };
 		034CF94E28F00C790092ACB8 /* KakaoSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CF94D28F00C790092ACB8 /* KakaoSignUpViewController.swift */; };
 		034CF95028F00D0E0092ACB8 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CF94F28F00D0E0092ACB8 /* WelcomeViewController.swift */; };
-		036DC221290BAACE00AAEC65 /* PhotoGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036DC220290BAACE00AAEC65 /* PhotoGridViewController.swift */; };
 		036DC223290BAAE100AAEC65 /* SharpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036DC222290BAAE100AAEC65 /* SharpViewController.swift */; };
 		036DC225290BAAF300AAEC65 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036DC224290BAAF300AAEC65 /* ShopViewController.swift */; };
 		036DC227290BAAFF00AAEC65 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036DC226290BAAFF00AAEC65 /* MoreViewController.swift */; };
@@ -27,6 +26,8 @@
 		036DC23B290BDE8900AAEC65 /* SwiftyColor in Frameworks */ = {isa = PBXBuildFile; productRef = 036DC23A290BDE8900AAEC65 /* SwiftyColor */; };
 		036DC23E290BDE9400AAEC65 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 036DC23D290BDE9400AAEC65 /* Then */; };
 		0384A9EF290933F00072C114 /* KakaoTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0384A9EE290933F00072C114 /* KakaoTabbarController.swift */; };
+		03E3A2DC2912572C000448E3 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3A2DB2912572C000448E3 /* ChatViewController.swift */; };
+		03E3A2DE29126D75000448E3 /* ChatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3A2DD29126D75000448E3 /* ChatCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,13 +43,14 @@
 		034CF94728F00AD80092ACB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		034CF94D28F00C790092ACB8 /* KakaoSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoSignUpViewController.swift; sourceTree = "<group>"; };
 		034CF94F28F00D0E0092ACB8 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		036DC220290BAACE00AAEC65 /* PhotoGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewController.swift; sourceTree = "<group>"; };
 		036DC222290BAAE100AAEC65 /* SharpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharpViewController.swift; sourceTree = "<group>"; };
 		036DC224290BAAF300AAEC65 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		036DC226290BAAFF00AAEC65 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		036DC234290BCFAB00AAEC65 /* FriendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendModel.swift; sourceTree = "<group>"; };
 		036DC237290BDE5F00AAEC65 /* FriendListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListTableViewCell.swift; sourceTree = "<group>"; };
 		0384A9EE290933F00072C114 /* KakaoTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoTabbarController.swift; sourceTree = "<group>"; };
+		03E3A2DB2912572C000448E3 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		03E3A2DD29126D75000448E3 /* ChatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +124,7 @@
 				036DC22E290BCD2200AAEC65 /* SignUp */,
 				036DC22D290BC31600AAEC65 /* Tabbar */,
 				0335870B28F4E69E000F70FD /* FriendTabViewController.swift */,
-				036DC220290BAACE00AAEC65 /* PhotoGridViewController.swift */,
+				03E3A2DB2912572C000448E3 /* ChatViewController.swift */,
 				036DC222290BAAE100AAEC65 /* SharpViewController.swift */,
 				036DC224290BAAF300AAEC65 /* ShopViewController.swift */,
 				036DC226290BAAFF00AAEC65 /* MoreViewController.swift */,
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				036DC237290BDE5F00AAEC65 /* FriendListTableViewCell.swift */,
+				03E3A2DD29126D75000448E3 /* ChatCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -268,11 +271,12 @@
 				034CF93A28F00AD70092ACB8 /* AppDelegate.swift in Sources */,
 				0335870E28F4F5D0000F70FD /* ProfileViewController.swift in Sources */,
 				036DC235290BCFAB00AAEC65 /* FriendModel.swift in Sources */,
-				036DC221290BAACE00AAEC65 /* PhotoGridViewController.swift in Sources */,
 				036DC238290BDE5F00AAEC65 /* FriendListTableViewCell.swift in Sources */,
 				0384A9EF290933F00072C114 /* KakaoTabbarController.swift in Sources */,
+				03E3A2DC2912572C000448E3 /* ChatViewController.swift in Sources */,
 				036DC227290BAAFF00AAEC65 /* MoreViewController.swift in Sources */,
 				034CF93C28F00AD70092ACB8 /* SceneDelegate.swift in Sources */,
+				03E3A2DE29126D75000448E3 /* ChatCollectionViewCell.swift in Sources */,
 				034CF94E28F00C790092ACB8 /* KakaoSignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -108,7 +108,7 @@ extension FriendTabViewController{
         }
         
         profileView.snp.makeConstraints { make in
-            make.top.equalTo(friendLabel.snp.bottom).offset(16)
+            make.top.equalTo(friendLabel.snp.bottom).offset(12)
             make.leading.equalTo(self.view.safeAreaLayoutGuide)
             make.width.equalTo(self.view.safeAreaLayoutGuide)
             make.height.equalTo(80)
