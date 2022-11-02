@@ -49,7 +49,7 @@ class ChatViewController: UIViewController {
         layout.scrollDirection = .vertical
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .green
+        collectionView.backgroundColor = .clear
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.isScrollEnabled = true
         collectionView.showsVerticalScrollIndicator = false
@@ -113,7 +113,7 @@ extension ChatViewController{
         chatCollectionView.snp.makeConstraints { make in
             make.top.equalTo(mychatImg.snp.bottom).offset(10)
             make.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
-            make.height.equalTo(friendList.count * 50)
+            make.bottom.equalToSuperview()
         }
     }
     
@@ -125,9 +125,7 @@ extension ChatViewController{
 }
 
 extension ChatViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50 // 셀 하나의 높이
-    }
+
 }
 
 extension ChatViewController: UICollectionViewDataSource {
@@ -141,6 +139,14 @@ extension ChatViewController: UICollectionViewDataSource {
                 as? ChatCollectionViewCell else { return UICollectionViewCell() }
         FriendCell.dataBind(model: friendList[indexPath.item])
         return FriendCell
+    }
+}
+
+extension ChatViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:
+                        UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let screenWidth = UIScreen.main.bounds.width
+        return CGSize(width: screenWidth, height: 60)
     }
 }
 
