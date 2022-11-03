@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         
         // 화면 이동
-        let rootVC = KakaoTabbarController()
+        let rootVC = GalleryViewController()
         let navigationControler = UINavigationController(rootViewController: rootVC)
         navigationControler.isNavigationBarHidden = true
         
