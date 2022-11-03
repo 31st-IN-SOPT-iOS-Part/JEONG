@@ -20,6 +20,7 @@
 		034CF95028F00D0E0092ACB8 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CF94F28F00D0E0092ACB8 /* WelcomeViewController.swift */; };
 		035DFC7229139F2900BBB1C2 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DFC7129139F2900BBB1C2 /* GalleryViewController.swift */; };
 		035DFC742913A16500BBB1C2 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DFC732913A16500BBB1C2 /* PhotoModel.swift */; };
+		035DFC762913A7D100BBB1C2 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DFC752913A7D100BBB1C2 /* GalleryCollectionViewCell.swift */; };
 		036DC223290BAAE100AAEC65 /* SharpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036DC222290BAAE100AAEC65 /* SharpViewController.swift */; };
 		036DC225290BAAF300AAEC65 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036DC224290BAAF300AAEC65 /* ShopViewController.swift */; };
 		036DC227290BAAFF00AAEC65 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036DC226290BAAFF00AAEC65 /* MoreViewController.swift */; };
@@ -47,6 +48,7 @@
 		034CF94F28F00D0E0092ACB8 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		035DFC7129139F2900BBB1C2 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		035DFC732913A16500BBB1C2 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
+		035DFC752913A7D100BBB1C2 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		036DC222290BAAE100AAEC65 /* SharpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharpViewController.swift; sourceTree = "<group>"; };
 		036DC224290BAAF300AAEC65 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		036DC226290BAAFF00AAEC65 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			children = (
 				036DC237290BDE5F00AAEC65 /* FriendListTableViewCell.swift */,
 				03E3A2DD29126D75000448E3 /* ChatCollectionViewCell.swift */,
+				035DFC752913A7D100BBB1C2 /* GalleryCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				0335870C28F4E69E000F70FD /* FriendTabViewController.swift in Sources */,
 				035DFC7229139F2900BBB1C2 /* GalleryViewController.swift in Sources */,
 				034CF93A28F00AD70092ACB8 /* AppDelegate.swift in Sources */,
+				035DFC762913A7D100BBB1C2 /* GalleryCollectionViewCell.swift in Sources */,
 				0335870E28F4F5D0000F70FD /* ProfileViewController.swift in Sources */,
 				036DC235290BCFAB00AAEC65 /* FriendModel.swift in Sources */,
 				036DC238290BDE5F00AAEC65 /* FriendListTableViewCell.swift in Sources */,

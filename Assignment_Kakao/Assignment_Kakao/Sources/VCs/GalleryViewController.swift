@@ -38,6 +38,8 @@ class GalleryViewController: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.isScrollEnabled = true
         collectionView.showsVerticalScrollIndicator = false
+        collectionView.delegate = self
+        collectionView.dataSource = self
         return collectionView
     }()
     
@@ -66,10 +68,16 @@ class GalleryViewController: UIViewController {
         PhotoModel(photoImage: "galleryImage22"),
         PhotoModel(photoImage: "galleryImage23"),
     ]
+    
+    final let photoInset: UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 4, right: 0)
+    final let photoLineSpacing: CGFloat = 7
+    final let photoInterItemSpacing: CGFloat = 9
+    final let photoCellHeight = 119
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        register()
         layout()
     }
 }
@@ -99,5 +107,50 @@ extension GalleryViewController {
             make.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
             make.bottom.equalToSuperview()
         }
+    }
+    
+    private func register() {
+        galleryCollectionView.register(GalleryCollectionViewCell.self,
+                                       forCellWithReuseIdentifier: GalleryCollectionViewCell.identifier
+        )
+    }
+}
+
+extension GalleryViewController: UICollectionViewDelegate {
+
+}
+
+extension GalleryViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return PhotoList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let photoCell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: GalleryCollectionViewCell.identifier, for: indexPath)
+                as? GalleryCollectionViewCell else { return UICollectionViewCell() }
+        photoCell.dataBind(model: PhotoList[indexPath.item])
+        return photoCell
+    }
+}
+
+extension GalleryViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:
+                        UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let screenWidth = UIScreen.main.bounds.width
+        let CellWidth = screenWidth - photoInset.left - photoInset.right - photoInterItemSpacing * 3
+        return CGSize(width: CellWidth / 3, height: 119)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return photoLineSpacing
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return photoInterItemSpacing
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return photoInset
     }
 }
