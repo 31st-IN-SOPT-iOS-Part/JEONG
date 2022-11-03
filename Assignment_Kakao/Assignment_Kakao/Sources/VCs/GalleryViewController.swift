@@ -9,10 +9,11 @@ import UIKit
 
 class GalleryViewController: UIViewController {
     
-    private let closeImg: UIImageView = {
-        let imgView = UIImageView()
-        imgView.image = UIImage(named: "iconClose")
-        return imgView
+    private let closeImgButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "iconClose"), for: .normal)
+        button.addTarget(self, action: #selector(backButton), for: .touchUpInside)
+        return button
     }()
     
     private let recentLabel: UILabel = {
@@ -80,14 +81,19 @@ class GalleryViewController: UIViewController {
         register()
         layout()
     }
+    
+    @objc
+    private func backButton() {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension GalleryViewController {
     private func layout() {
         view.backgroundColor = .white
-        view.addSubviews([closeImg, recentLabel, sendLabel, galleryCollectionView])
+        view.addSubviews([closeImgButton, recentLabel, sendLabel, galleryCollectionView])
         
-        closeImg.snp.makeConstraints { make in
+        closeImgButton.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide).offset(7)
             make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(12)
         }

@@ -27,7 +27,7 @@ class ChatViewController: UIViewController {
     private let plusImgButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "iconPlus"), for: .normal)
-        // button.addTarget(self, action: #selector(presentToProfileVC), for: .touchUpInside)
+        button.addTarget(self, action: #selector(touchtoGalleryButton), for: .touchUpInside)
         return button
     }()
     
@@ -75,6 +75,18 @@ class ChatViewController: UIViewController {
         super.viewDidLoad()
         register()
         layout()
+    }
+    
+    // 갤러리 화면 이동
+    private func presentToGalleryVC(){
+        let galleryVC = GalleryViewController()
+        galleryVC.modalPresentationStyle = .fullScreen
+        self.present(galleryVC, animated: true, completion: nil)
+    }
+    
+    @objc
+    private func touchtoGalleryButton(){
+        presentToGalleryVC()
     }
 }
 
