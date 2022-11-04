@@ -114,7 +114,6 @@ extension KakaoTabbarController : UITabBarControllerDelegate {
     }
 }
 
-
 extension Double{
     var adjusted: Double {
         let ratio: Double = Double(UIScreen.main.bounds.width)/375

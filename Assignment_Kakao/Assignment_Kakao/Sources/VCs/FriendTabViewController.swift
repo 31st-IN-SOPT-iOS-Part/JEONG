@@ -36,7 +36,7 @@ class FriendTabViewController: UIViewController {
     
     private let stateLabel: UILabel = {
         let label = UILabel()
-        label.text = "ㅇㅇㅇㅇ"
+        label.text = "살려주세요"
         label.textColor = 0x1E1E1E.color
         label.font = .systemFont(ofSize: 11, weight: .light)
         return label

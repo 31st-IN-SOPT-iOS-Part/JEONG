@@ -161,4 +161,3 @@ extension ChatViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: screenWidth, height: 60)
     }
 }
-
