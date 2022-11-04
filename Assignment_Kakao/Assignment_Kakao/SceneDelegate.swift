@@ -19,8 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         
         // 화면 이동
-        let rootVC = KakaoStartViewController()
+        let rootVC = KakaoTabbarController()
         let navigationControler = UINavigationController(rootViewController: rootVC)
+        navigationControler.isNavigationBarHidden = true
         
         window?.rootViewController = navigationControler
     }
@@ -52,7 +53,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
 }
 
